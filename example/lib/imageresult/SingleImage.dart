@@ -44,15 +44,13 @@ class SingleImageState extends State<PreviewImageWidget> {
   flutterUi.Image _datoudingImage;
   String datouding = "images/datouding.png";
   String datouding_blue = "images/datouding_blue.png";
+
   @override
   void initState() {
     super.initState();
     for (int i = 0; i < offsets.length; i++) {
       Model model = new Model(
-          index: i,
-          isRed: i % 2 == 0 ? true : false,
-          img: i % 2 == 0 ? datouding : datouding_blue,
-          offset: offsets[i]);
+          index: i, isRed: i % 2 == 0 ? true : false, img: i % 2 == 0 ? datouding : datouding_blue, offset: offsets[i]);
       datas.add(model);
     }
     reLoad();
@@ -86,27 +84,26 @@ class SingleImageState extends State<PreviewImageWidget> {
           child: new Container(
               child: new Column(children: <Widget>[
         new Expanded(child: getImageWidget()),
-        RaisedButton(
+        ElevatedButton(
           child: Text("更换状态"),
-          color: Colors.blue,
-          textColor: Colors.white,
+          style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.blue),
+              textStyle: MaterialStateProperty.all(TextStyle(color: Colors.white))),
+          // color: Colors.blue,
+          // textColor: Colors.white,
           onPressed: () {
             Model m1 = datas[0];
             Model m2 = datas[6];
             Model model0 = Model(
                 index: m1.index,
                 isRed: !m1.isRed,
-                img: m1.img == "images/datouding_blue.png"
-                    ? "images/datouding.png"
-                    : "images/datouding_blue.png",
+                img: m1.img == "images/datouding_blue.png" ? "images/datouding.png" : "images/datouding_blue.png",
                 offset: m1.offset);
             datas[0] = model0;
             Model model3 = Model(
                 index: m2.index,
                 isRed: !m2.isRed,
-                img: m2.img == "images/datouding_blue.png"
-                    ? "images/datouding.png"
-                    : "images/datouding_blue.png",
+                img: m2.img == "images/datouding_blue.png" ? "images/datouding.png" : "images/datouding_blue.png",
                 offset: m2.offset);
             datas[6] = model3;
 
@@ -121,9 +118,7 @@ class SingleImageState extends State<PreviewImageWidget> {
     return RepaintBoundary(
       key: pipCaptureKey,
       child: new Center(
-        child: DragScaleContainer(
-            doubleTapStillScale: true,
-            child: new DrawWidget(_bigImage, _datoudingImage)),
+        child: DragScaleContainer(doubleTapStillScale: true, child: new DrawWidget(_bigImage, _datoudingImage)),
       ),
     );
   }
