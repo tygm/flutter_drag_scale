@@ -1,3 +1,7 @@
 # This is a generated file; do not edit or check into version control.
-flutter_drag_scale=/Users/zhenzhang/flutter/.pub-cache/git/flutter_drag_scale-33d4dfa904728e277f67d029767b833330655333/
-path_provider=/Users/zhenzhang/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-0.4.1/
+flutter_drag_scale=/Users/zhenzhang/Project/flutter_drag_scale/
+path_provider=/Users/zhenzhang/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.12/
+path_provider_android=/Users/zhenzhang/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.22/
+path_provider_foundation=/Users/zhenzhang/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_foundation-2.1.1/
+path_provider_linux=/Users/zhenzhang/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.7/
+path_provider_windows=/Users/zhenzhang/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.3/
